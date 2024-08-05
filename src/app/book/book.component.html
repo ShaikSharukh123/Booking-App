@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="card mt-3">
+        <div class="row">
+            <div class="col">
+                <h2 class="text-center">Books And Author Registration Portal</h2>
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col-md-6">
+                <input class="form-control" [(ngModel)]="newBookTitle" placeholder="Please enter the title of the book">
+            </div>
+            <div class="col-md-4">
+                <input class="form-control" [(ngModel)]="newBookAuthor" placeholder="Please enter the author of the book">
+
+            </div>
+            <div class="col-md-2">
+                <button class="btn btn-primary w-100" (click)="AddBookBtn()">Add Book</button>
+            </div>
+        </div>
+    </div>
+      <h2 class="text-center mt-5">Books Registered</h2>
+        <ul class="list-greoup mt-3">
+           <li class="list-group-item d-flex justify-content-between" *ngFor="let book of books;index as i">
+            {{book.id}}  {{book.title}}   {{book.author}}
+            <button class="btn btn-danger " (click)="dltBook(i)">Delete</button>
+           </li>
+        </ul>
+</div>
+
